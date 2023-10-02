@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setFormData } from '../store/actions';
 import '../styles/Login.css';
 
-const Login = () => {
+const Login = ({ setIsAuthenticated, setCurrentPage }) => {
     const dispatch = useDispatch();
 
     // Добавляем функцию для валидации email
@@ -44,6 +44,12 @@ const Login = () => {
             // и обновить состояние с использованием Redux
             dispatch(setFormData(values));
             console.log(values)
+
+            setIsAuthenticated(true);
+            setCurrentPage('/dashboard');
+
+            // Сохраните состояние авторизации в localStorage
+            localStorage.setItem('authenticated', 'true');
         },
     });
 
