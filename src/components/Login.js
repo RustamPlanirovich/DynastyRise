@@ -5,6 +5,7 @@ import { Button, TextField, Typography, Container } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { setFormData } from '../store/actions';
 import '../styles/Login.css';
+import {Link} from "react-router-dom";
 
 const Login = ({ setIsAuthenticated, setCurrentPage }) => {
     const dispatch = useDispatch();
@@ -84,6 +85,7 @@ const Login = ({ setIsAuthenticated, setCurrentPage }) => {
                     <Button type="submit" variant="contained" disabled={Boolean(formik.errors.email) || Boolean(formik.errors.password)}>
                         Login
                     </Button>
+                    <Link to="/registration">Register</Link>
                 </form>
             </div>
         </Container>
