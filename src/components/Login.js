@@ -87,6 +87,7 @@ const Login = ({ setIsAuthenticated, setCurrentPage }) => {
                     </Button>
                     <Link to="/registration">Register</Link>
                 </form>
+                <Link to="/password-reset">Forgot Password?</Link>
             </div>
         </Container>
     );

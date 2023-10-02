@@ -5,6 +5,7 @@ import {Route, BrowserRouter as Router, Redirect, Switch} from "react-router-dom
 import Login from "./components/Login";
 import {useEffect, useState} from "react";
 import Dashboard from "./components/Dashboard";
+import PasswordReset from "./components/PasswordReset";
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
                     </Route>
                     <Route path='/dashboard'>
                         {isAuthenticated ? <Dashboard /> : <Redirect to="/login" />}
+                    </Route>pa
+                    <Route path="/password-reset">
+                        <PasswordReset />
                     </Route>
                     {/* Другие маршруты */}
                 </Switch>
