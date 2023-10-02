@@ -28,7 +28,7 @@ function App() {
 
     return (
         <Provider store={store}>
-            {isAuthenticated && <AppToolbar/>}
+
             <Router>
                     <div style={{
                         marginTop: '64px',
@@ -39,6 +39,7 @@ function App() {
                         justifyContent: 'center',
                         alignItems:' center',
                     }}>
+                        {isAuthenticated && <AppToolbar/>}
                         <Switch>
                             <Route path="/login">
                                 {isAuthenticated ? <Redirect to={currentPage || '/dashboard'}/> :
