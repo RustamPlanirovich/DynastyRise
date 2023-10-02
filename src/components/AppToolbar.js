@@ -12,7 +12,7 @@ const AppToolbar = () => {
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     Your App Name
