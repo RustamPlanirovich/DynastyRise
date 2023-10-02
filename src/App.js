@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import {useEffect, useState} from "react";
 import Dashboard from "./components/Dashboard";
 import PasswordReset from "./components/PasswordReset";
+import Registration from "./components/Registration";
 
 function App() {
 
@@ -35,6 +36,9 @@ function App() {
                     </Route>pa
                     <Route path="/password-reset">
                         <PasswordReset />
+                    </Route>
+                    <Route path="/registration"> {/* Добавьте маршрут для страницы регистрации */}
+                        <Registration />
                     </Route>
                     {/* Другие маршруты */}
                 </Switch>
