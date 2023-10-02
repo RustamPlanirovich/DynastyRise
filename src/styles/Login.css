@@ -1,0 +1,57 @@
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff; /* Цвет текста в поле ввода */
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+
+.MuiTextField-root .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+/* Изменение цвета рамки при фокусировке */
+.MuiTextField-root:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+
+/* Изменение цвета текста подсказки при отсутствии фокуса */
+.MuiTextField-root .MuiInputLabel-outlined {
+    color: rgb(47, 238, 222); /* Светло-серый цвет текста подсказки без фокуса */
+}
+.MuiTextField-root .MuiInputLabel-outlined.Mui-focused {
+    color: rgb(47, 238, 222); /* Светло-серый цвет текста подсказки без фокуса */
+}
