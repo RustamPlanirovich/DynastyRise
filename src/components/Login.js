@@ -9,10 +9,35 @@ import '../styles/Login.css';
 const Login = () => {
     const dispatch = useDispatch();
 
+    // Добавляем функцию для валидации email
+    const validateEmail = (value) => {
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        return emailRegex.test(value) ? undefined : 'Неверный адрес электронной почты';
+    };
+
+    // Добавляем функцию для валидации пароля
+    const validatePassword = (value) => {
+        return value.length >= 8 ? undefined : 'Пароль должен содержать не менее 8 символов';
+    };
+
     const formik = useFormik({
         initialValues: {
-            username: '',
+            email: '',
             password: '',
+        },
+        // Добавляем валидацию для полей
+        validate: (values) => {
+            const errors = {};
+            errors.email = validateEmail(values.email);
+            errors.password = validatePassword(values.password);
+            // Возвращайте undefined, если поле прошло валидацию
+            if (!errors.email) {
+                delete errors.email;
+            }
+            if (!errors.password) {
+                delete errors.password;
+            }
+            return errors;
         },
         onSubmit: (values) => {
             // Можно отправить данные на сервер для аутентификации
@@ -31,10 +56,13 @@ const Login = () => {
                 <form onSubmit={formik.handleSubmit}>
                     <TextField
                         fullWidth
-                        name="username"
-                        label="Username"
-                        value={formik.values.username}
+                        name="email"
+                        label="email"
+                        value={formik.values.email}
                         onChange={formik.handleChange}
+                        error={formik.touched.email && Boolean(formik.errors.email)}
+                        helperText={formik.touched.email && formik.errors.email}
+
                     />
                     <TextField
                         fullWidth
@@ -43,8 +71,11 @@ const Login = () => {
                         type="password"
                         value={formik.values.password}
                         onChange={formik.handleChange}
+                        error={formik.touched.password && Boolean(formik.errors.password)}
+                        helperText={formik.touched.password && formik.errors.password}
+
                     />
-                    <Button size="small" type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" disabled={Boolean(formik.errors.email) || Boolean(formik.errors.password)}>
                         Login
                     </Button>
                 </form>
