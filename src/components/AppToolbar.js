@@ -4,7 +4,7 @@ import React from 'react';
 
 const AppToolbar = () => {
     return (
-        <AppBar position="fixed">
+        <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Your App Name
