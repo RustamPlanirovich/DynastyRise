@@ -1,8 +1,8 @@
 // src/components/CustomToolbar.js
-import {AppBar, Button, Toolbar, Typography} from "@mui/material";
+import {AppBar, Button, Typography} from "@mui/material";
 import React from 'react';
 
-const AppToolbar = () => {
+const Toolbar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
@@ -16,4 +16,4 @@ const AppToolbar = () => {
 };
 
 
-export default AppToolbar
+export default Toolbar
