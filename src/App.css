@@ -1,3 +1,15 @@
-body{
-    background-color: #2c3440;
+
+/* src/styles/Login.css */
+
+body {
+    background-color: #2c3440; /* Цвет фона */
+    color: #ffffff; /* Цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Занимает всю высоту видимой области экрана */
 }
+
+
