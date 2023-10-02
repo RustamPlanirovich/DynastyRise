@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import Dashboard from "./components/Dashboard";
 import PasswordReset from "./components/PasswordReset";
 import Registration from "./components/Registration";
+import Toolbar from "./components/Toolbar";
 
 function App() {
 
@@ -28,17 +29,20 @@ function App() {
         <Provider store={store}>
             <Router>
                 <Switch>
+                    {isAuthenticated && <Toolbar/>}
+
                     <Route path="/login">
-                        {isAuthenticated ? <Redirect to={currentPage || '/dashboard'} /> : <Login setIsAuthenticated={setIsAuthenticated} setCurrentPage={setCurrentPage}/>}
+                        {isAuthenticated ? <Redirect to={currentPage || '/dashboard'}/> :
+                            <Login setIsAuthenticated={setIsAuthenticated} setCurrentPage={setCurrentPage}/>}
                     </Route>
                     <Route path='/dashboard'>
-                        {isAuthenticated ? <Dashboard /> : <Redirect to="/login" />}
+                        {isAuthenticated ? <Dashboard/> : <Redirect to="/login"/>}
                     </Route>pa
                     <Route path="/password-reset">
-                        <PasswordReset />
+                        <PasswordReset/>
                     </Route>
                     <Route path="/registration"> {/* Добавьте маршрут для страницы регистрации */}
-                        <Registration />
+                        <Registration/>
                     </Route>
                     {/* Другие маршруты */}
                 </Switch>
