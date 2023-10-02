@@ -5,6 +5,7 @@ import { Button, TextField, Typography, Container } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { setFormData } from '../store/actions';
 import '../styles/Login.css';
+import {Link} from "react-router-dom";
 
 const Login = ({ setIsAuthenticated, setCurrentPage }) => {
     const dispatch = useDispatch();
@@ -85,6 +86,7 @@ const Login = ({ setIsAuthenticated, setCurrentPage }) => {
                         Login
                     </Button>
                 </form>
+                <Link to="/password-reset">Forgot Password?</Link>
             </div>
         </Container>
     );
